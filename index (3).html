@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Ejecutivo Campaña 16 de Mayo</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#edf5fb;color:#102033}
+.header{background:linear-gradient(90deg,#006ba8,#111a8f,#6b008e);color:white;padding:18px 24px;border-radius:0 0 26px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.header h1{margin:0;font-size:clamp(26px,3vw,48px);font-weight:950}
+.header p{margin:4px 0 0;font-size:clamp(15px,1.8vw,25px);font-weight:750}
+.logo{background:#0c8dbf;border:2px solid rgba(255,255,255,.35);border-radius:16px;padding:12px 18px;text-align:center;font-weight:950}
+.container{max-width:1850px;margin:auto;padding:14px}
+.audit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.audit-card{background:#fff;border-left:8px solid #12a66a;border-radius:16px;padding:10px 14px;font-weight:900;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.kpis{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-bottom:14px}
+.kpi{border-radius:26px;color:white;padding:16px;position:relative;overflow:hidden;min-height:126px;box-shadow:0 12px 24px rgba(0,0,0,.18)}
+.kpi:before{content:'';position:absolute;right:-32px;top:-32px;width:118px;height:118px;border:12px solid rgba(255,255,255,.25);border-radius:50%}
+.kpi .icon{font-size:34px}
+.kpi .value{font-size:clamp(27px,3.3vw,48px);font-weight:950;line-height:1}
+.kpi .label{font-size:12px;text-transform:uppercase;font-weight:950;margin-top:7px}
+.bg1{background:linear-gradient(135deg,#07166f,#0b71d9)}
+.bg2{background:linear-gradient(135deg,#008f7a,#15c47e)}
+.bg3{background:linear-gradient(135deg,#f07c00,#f9b234)}
+.bg4{background:linear-gradient(135deg,#8211a9,#e22f92)}
+.bg5{background:linear-gradient(135deg,#c62828,#ef5350)}
+.bg6{background:linear-gradient(135deg,#0f766e,#06b6d4)}
+.bg7{background:linear-gradient(135deg,#4c1d95,#8b5cf6)}
+.main{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.panel{background:#fff;border:3px solid #101b62;border-radius:24px;padding:14px;box-shadow:0 8px 18px rgba(0,0,0,.08);margin-bottom:14px}
+.title{background:linear-gradient(90deg,#006ba8,#0b5394);color:white;text-align:center;padding:10px;border-radius:18px;font-size:clamp(17px,1.5vw,24px);font-weight:950;margin-bottom:12px}
+.bar{display:grid;grid-template-columns:150px 1fr 65px;gap:8px;align-items:center;margin:7px 0}
+.lbl{font-size:13px;font-weight:950}
+.track{height:24px;background:#edf2f7;border-radius:24px;overflow:hidden}
+.fill{height:100%;border-radius:24px;background:linear-gradient(90deg,#0b71b9,#6a00a8);color:white;text-align:right;padding-right:7px;font-size:12px;font-weight:950;line-height:24px;min-width:4px}
+.num{text-align:right;font-weight:950}
+table{width:100%;border-collapse:collapse}
+th{background:#101b62;color:#fff;padding:8px;font-size:12px}
+td{padding:7px;border-bottom:1px solid #e5e7eb;text-align:center;font-weight:750;font-size:12.5px}
+tr:hover{background:#f3f8ff}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:950}
+.ok{background:#dcfce7;color:#166534}
+.warn{background:#fef3c7;color:#92400e}
+.info{background:#dbeafe;color:#1e40af}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.figure{background:#f3f8ff;border:1px solid #dbeafe;border-radius:16px;padding:12px;text-align:center;font-weight:950;color:#101b62}
+.figure .emoji{font-size:32px}
+.footer{display:grid;grid-template-columns:1.3fr .7fr;gap:14px}
+.analysis{line-height:1.55;font-size:14px}
+.analysis li{margin-bottom:7px}
+@media(max-width:1300px){.kpis{grid-template-columns:repeat(2,1fr)}.main,.footer,.audit{grid-template-columns:1fr}.header{flex-direction:column;text-align:center}}
+@media(max-width:700px){.kpis{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.bar{grid-template-columns:115px 1fr 55px}}
+@media print{body{background:white}.panel,.kpi,.audit-card{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div>
+    <h1>DASHBOARD EJECUTIVO DE CAMPAÑA</h1>
+    <p>Atenciones, atendidos, servicios, vacunas, recetas y laboratorio | 16 de mayo</p>
+  </div>
+  <div class="logo">MINSA<br>DIRIS LIMA ESTE<br>RIS ATE</div>
+</header>
+
+<main class="container">
+  <section class="audit">
+    <div class="audit-card">✅ Servicios vs atenciones: OK | 932 = 932</div>
+    <div class="audit-card">✅ Vacunas vs total: OK | 226 = 226</div>
+    <div class="audit-card">✅ Laboratorio PDF validado: 309 órdenes y 1,676 exámenes</div>
+  </section>
+
+  <section class="kpis">
+    <div class="kpi bg1"><div class="icon">👥</div><div class="value">513</div><div class="label">Atendidos</div></div>
+    <div class="kpi bg2"><div class="icon">🏥</div><div class="value">932</div><div class="label">Atenciones</div></div>
+    <div class="kpi bg3"><div class="icon">📄</div><div class="value">84</div><div class="label">Recetas registradas</div></div>
+    <div class="kpi bg4"><div class="icon">🧾</div><div class="value">309</div><div class="label">Órdenes laboratorio</div></div>
+    <div class="kpi bg5"><div class="icon">🧪</div><div class="value">1,676</div><div class="label">Exámenes procesados</div></div>
+    <div class="kpi bg6"><div class="icon">💉</div><div class="value">149</div><div class="label">Pacientes inmunizados</div></div>
+    <div class="kpi bg7"><div class="icon">🛡️</div><div class="value">226</div><div class="label">Total vacunas aplicadas</div></div>
+  </section>
+
+  <section class="main">
+    <div class="panel">
+      <div class="title">📊 PRODUCTIVIDAD POR SERVICIO</div>
+      <div id="servicios"></div>
+      <br>
+      <table>
+        <tr><th>Indicador</th><th>Resultado</th></tr>
+        <tr><td>Servicio con mayor producción</td><td><strong>Medicina General</strong></td></tr>
+        <tr><td>Atenciones / Atendidos</td><td><strong>1.82</strong></td></tr>
+        <tr><td>Total servicios</td><td><strong>6</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="title">💉 VACUNAS E INMUNIZACIONES</div>
+      <div id="vacunas"></div>
+      <br>
+      <table>
+        <tr><th>Indicador</th><th>Resultado</th></tr>
+        <tr><td>Pacientes inmunizados</td><td><strong>149</strong></td></tr>
+        <tr><td>Total vacunas aplicadas</td><td><strong>226</strong></td></tr>
+        <tr><td>Vacunas por paciente</td><td><strong>1.52</strong></td></tr>
+        <tr><td>Vacuna más aplicada</td><td><strong>Influenza Adulto</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="title">🧪 LABORATORIO Y EXÁMENES</div>
+      <div id="laboratorio"></div>
+      <br>
+      <table>
+        <tr><th>Indicador</th><th>Resultado</th></tr>
+        <tr><td>Órdenes emitidas</td><td><strong>309</strong></td></tr>
+        <tr><td>Exámenes procesados</td><td><strong>1,676</strong></td></tr>
+        <tr><td>Exámenes por orden</td><td><strong>5.42</strong></td></tr>
+        <tr><td>Examen más solicitado</td><td><strong>Hemograma completo</strong></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="panel">
+      <div class="title">📌 LECTURA EJECUTIVA GERENCIAL</div>
+      <div class="analysis">
+        <ul>
+          <li><strong>Producción general:</strong> se registraron <strong>932</strong> atenciones para <strong>513</strong> atendidos, con una razón de <strong>1.82</strong> atenciones por atendido.</li>
+          <li><strong>Servicios:</strong> el mayor volumen corresponde a <strong>Medicina General</strong> con <strong>621</strong> atenciones.</li>
+          <li><strong>Recetas:</strong> se registraron <strong>84</strong> recetas, útil para medir continuidad terapéutica y demanda farmacológica.</li>
+          <li><strong>Inmunizaciones:</strong> se inmunizaron <strong>149</strong> pacientes y se aplicaron <strong>226</strong> vacunas, con una razón de <strong>1.52</strong> vacunas por paciente.</li>
+          <li><strong>Laboratorio:</strong> se emitieron <strong>309</strong> órdenes y se procesaron <strong>1,676</strong> exámenes, equivalente a <strong>5.42</strong> exámenes por orden.</li>
+          <li><strong>Decisión gerencial:</strong> reforzar medicina general, laboratorio e inmunizaciones para próximas campañas por ser los bloques de mayor carga operativa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="title">🎯 SEMÁFORO Y CONTROL</div>
+      <div class="cards">
+        <div class="figure"><div class="emoji">🟢</div>Servicios<br><strong>Validado</strong></div>
+        <div class="figure"><div class="emoji">🟢</div>Vacunas<br><strong>Validado</strong></div>
+        <div class="figure"><div class="emoji">🟢</div>Laboratorio<br><strong>Validado</strong></div>
+      </div>
+      <br>
+      <table>
+        <tr><th>Bloque</th><th>Resultado</th><th>Estado</th></tr>
+        <tr><td>Atenciones</td><td>932</td><td><span class="badge ok">OK</span></td></tr>
+        <tr><td>Atendidos</td><td>513</td><td><span class="badge ok">OK</span></td></tr>
+        <tr><td>Recetas</td><td>84</td><td><span class="badge info">Reportado</span></td></tr>
+        <tr><td>Laboratorio</td><td>1,676</td><td><span class="badge ok">PDF OK</span></td></tr>
+        <tr><td>Vacunas</td><td>226</td><td><span class="badge ok">OK</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+<section class="panel" style="margin-top:14px">
+  <div class="title">🏥 BLOQUE ESPECIALIDADES - APOYO HOSPITALARIO</div>
+  <div class="cards" style="grid-template-columns:repeat(5,1fr)">
+    <div class="figure"><div class="emoji">🧑‍⚕️</div>Adolescente<br><strong>55</strong><br><small>Dra. Mayra</small></div>
+    <div class="figure"><div class="emoji">🏨</div>Especialidades<br><strong>42</strong><br><small>Dra. Aira</small></div>
+    <div class="figure"><div class="emoji">🤰</div>Gestante<br><strong>32</strong><br><small>Lic. Rocio</small></div>
+    <div class="figure"><div class="emoji">👶</div>Niño<br><strong>100</strong><br><small>Dra. Patricia</small></div>
+    <div class="figure"><div class="emoji">🧔</div>Adulto<br><strong>93</strong><br><small>Dra. Daniela</small></div>
+  </div>
+  <br>
+  <table>
+    <tr><th>Componente</th><th>Total</th><th>Observación</th></tr>
+    <tr><td>Total atenciones especializadas</td><td><strong>322</strong></td><td><span class="badge ok">Apoyo de hospitales</span></td></tr>
+    <tr><td>Participación hospitalaria</td><td><strong>5 bloques</strong></td><td><span class="badge info">Intervención complementaria</span></td></tr>
+  </table>
+</section>
+
+</main>
+
+<script>
+const DATA = {"atendidos": 513, "atenciones": 932, "recetas": 84, "ordenes_laboratorio": 309, "examenes_procesados": 1676, "pacientes_inmunizados": 149, "total_vacunas": 226, "servicios": [["Medicina General", 621, "🩺"], ["Odontología", 66, "🦷"], ["Psicología", 10, "🧠"], ["Nutrición", 67, "🥗"], ["CRED", 19, "👶"], ["Inmunizaciones", 149, "💉"]], "vacunas": [["Influenza Adulto", 107], ["Antineumocócica", 27], ["Antiamarílica", 26], ["Diftotetánica Adulto", 20], ["VPH", 8], ["IPV", 8], ["DPT-HVB-HIB", 6], ["Hepatitis B Adulto", 5], ["SPR", 5], ["Rotavirus", 4], ["Hepatitis A", 3], ["Influenza Pediátrico", 3], ["Varicela", 2], ["APO", 1], ["DPT", 1]], "laboratorio_top": [["Hemograma completo", 293, "Hematología"], ["Hemoglobina glicosilada HbA1c", 218, "Bioquímica"], ["Colesterol", 164, "Bioquímica"], ["Glucosa", 164, "Bioquímica"], ["Triglicéridos", 164, "Bioquímica"], ["Colesterol HDL", 163, "Bioquímica"], ["Colesterol LDL", 163, "Bioquímica"], ["Creatinina", 122, "Bioquímica"], ["Microalbuminuria", 75, "Bioquímica"], ["PSA Total", 64, "Marcadores tumorales"], ["Urea", 56, "Bioquímica"]]};
+function fmt(n){return Number(n).toLocaleString('es-PE')}
+function bar(el,label,value,max,color,icon=''){ 
+  const pct=max ? (value/max)*100 : 0;
+  const div=document.createElement('div');
+  div.className='bar';
+  div.innerHTML=`<div class="lbl">${icon} ${label}</div><div class="track"><div class="fill" style="width:${Math.max(pct,2)}%;background:${color}">${pct>18?fmt(value):''}</div></div><div class="num">${fmt(value)}</div>`;
+  el.appendChild(div);
+}
+const serv=document.getElementById('servicios');
+let maxS=Math.max(...DATA.servicios.map(x=>x[1]));
+DATA.servicios.forEach((x,i)=>bar(serv,x[0],x[1],maxS,i==0?'linear-gradient(90deg,#b01485,#f97316)':'linear-gradient(90deg,#0b71b9,#13b5ea)',x[2]));
+
+const vac=document.getElementById('vacunas');
+let maxV=Math.max(...DATA.vacunas.map(x=>x[1]));
+DATA.vacunas.slice(0,10).forEach((x,i)=>bar(vac,x[0],x[1],maxV,['#0b5394','#12a66a','#f97316','#6a00a8','#e0354f'][i%5],'💉'));
+
+const lab=document.getElementById('laboratorio');
+let maxL=Math.max(...DATA.laboratorio_top.map(x=>x[1]));
+DATA.laboratorio_top.slice(0,10).forEach((x,i)=>bar(lab,x[0],x[1],maxL,['#081b74','#0b71b9','#f97316','#b01485','#6a00a8','#12a66a','#e0354f'][i%7],'🧪'));
+</script>
+</body>
+</html>
